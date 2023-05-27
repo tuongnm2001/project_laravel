@@ -53,6 +53,8 @@ class MenuController extends Controller{
     }
 
     public function store(CreateFormRequest $request){
+
+        // dd($request);
         $result = $this->menuService->create($request);
         return redirect()->back();
     }
