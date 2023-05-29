@@ -4,6 +4,7 @@ $.ajaxSetup({
     }
 });
 
+//function removeRow trong file Helper
 function removeRow(id, url) {
     if (confirm('Bạn có chắc muốn xóa người dùng không ? ')) {
         $.ajax({
@@ -40,7 +41,7 @@ $('#upload').change(function () {
                 $('#image_show').html('<a href="' + results.url + '" target="_blank">' +
                     '<img src="' + results.url + '" width="100px"></a > ');
 
-                $('#file').val(results.url);
+                $('#thumb').val(results.url);
             } else {
                 alert('Upload image error');
             }

@@ -22,10 +22,10 @@ class MenuController extends Controller{
         return redirect('/admin/menus/list');
     }
 
-    public function show(Menu $menu){        
+    public function show(Menu $menu){    
          return view('admin.menu.edit',[
-            'title'=>'Chỉnh sửa danh mục' . $menu->name ,
-            'menu'=>$menu,
+            'title'=>'Chỉnh sửa danh mục : ' . $menu->name ,
+            'menu'=> $menu,
             'menus'=> $this->menuService->getParent()
         ]);
     }
@@ -61,7 +61,7 @@ class MenuController extends Controller{
 
     public function index(){
         return view('admin.menu.list',[
-            'title'=>'Danh sách danh mục',
+            'title'=>'Danh sách danh mục mới nhất',
             'menus'=>$this->menuService->getAll()
         ]);
     }

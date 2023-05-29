@@ -6,10 +6,14 @@ use \App\Http\Controllers\Admin\MainController;
 use \App\Http\Controllers\Admin\MenuController;
 use \App\Http\Controllers\Admin\UploadController;
 use \App\Http\Controllers\Admin\ProductController;
+use \App\Http\Controllers\Api\ProductControllerAPI;
 
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/api',[ProductControllerAPI::class,'index']);
+
 
 Route::get('/admin/users/login',[LoginController::class, 'index'])->name('login');
 Route::post('/admin/users/login/store',[LoginController::class, 'store']);
@@ -23,6 +27,7 @@ Route::middleware(['auth'])->group(function(){
     
         #Menu
         Route::prefix('/menus')->group(function(){
+            #API
             Route::get('/add',[MenuController::class,'create' ]);
             Route::post('/add',[MenuController::class,'store' ]);
             Route::get('/list',[MenuController::class,'index' ]);
@@ -35,6 +40,7 @@ Route::middleware(['auth'])->group(function(){
         Route::prefix('products')->group(function(){
             Route::get('add', [ProductController::class,'create']);
             Route::post('add', [ProductController::class,'store']);
+            Route::get('list', [ProductController::class,'index']);
         });
 
         #Upload

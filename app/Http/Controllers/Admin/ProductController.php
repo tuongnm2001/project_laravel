@@ -21,9 +21,11 @@ class ProductController extends Controller{
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        //
+    public function index(){
+        return view('admin.products.list',[
+            'title'=>'Danh sách sản phẩm',
+            'products' =>$this->productService->get()
+        ]);
     }
 
     /**
@@ -31,9 +33,11 @@ class ProductController extends Controller{
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
-        //
+    public function create(){
+        return view('admin.products.add',[
+            'title'=>'Thêm sản phẩm mới',
+            'menus'=>$this->productService->getMenu()
+        ]);
     }
 
     /**

@@ -11,14 +11,14 @@ class Helper{
                     <tr>
                         <td>'.$menu->id.'</td>
                         <td>'.$char.$menu->name.'</td>
-                        <td>'.$menu->active.'</td>
+                        <td>'. self::active($menu->active).'</td>
                         <td>'.$menu->updated_at.'</td>
                         <td> 
                             <a class="btn btn-warning" href="/admin/menus/edit/'.$menu->id.'">
                                 <i class="fas fa-edit"></i>
                             </a>
 
-                            <a href="#" class="btn btn-danger" onclick="removeRow('.$menu->id.')">
+                            <a href="#" class="btn btn-danger" onclick="removeRow('.$menu->id.',\'/admin/menus/destroy\')">
                                 <i class="fas fa-trash"></i>
                             </a>
                         </td>
@@ -28,9 +28,14 @@ class Helper{
 
                 unset($menus[$key]);
 
-                $html .= self::menu($menus, $menu->id , $char . '--');
+                $html .= self::menu($menus, $menu->id , $char . '|--');
             }
         }
         return $html ;
+    }
+
+    public static function active($active = 0){
+        return $active === 0 ? '<span class="btn btn-danger btn-xs">NO</span>' : 
+        '<span  class="btn btn-success btn-xs">YES</span>';
     }
 }

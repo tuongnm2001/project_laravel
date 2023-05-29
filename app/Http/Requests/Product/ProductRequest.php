@@ -12,7 +12,7 @@ class ProductRequest extends FormRequest
      * @return bool
      */
     public function authorize(){
-        return false;
+        return true;
     }
 
     /**
@@ -23,14 +23,14 @@ class ProductRequest extends FormRequest
     public function rules(){
         return [
             'name' => 'required',
-            'file' => 'required'
+            'thumb' => 'required'
         ];
     }
 
     public function message(){
         return [
             'name.require' => "Vui lòng nhập tên sản phẩm ",
-            'file.require' => "Ảnh đại diện không được để trống"
+            'thumb.require' => "Ảnh đại diện không được để trống"
         ];   
     }
 }

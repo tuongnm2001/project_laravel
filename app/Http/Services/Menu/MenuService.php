@@ -11,15 +11,18 @@ class MenuService{
         return Menu::where('parent_id',0)->get();
     }
 
-    public function update ($request , $menu){
+    public function update ($request , $menu): bool{
+        if($request->input('parent_id') !== $menu->id){
+            $menu->parent_id = (int)$request->input('parent_id');
+        }
         $menu->name = (string) $request->input('name');
-        $menu->parent_id = (int) $request->input('parent_id');
+        // $menu->parent_id = (int) $request->input('parent_id');
         $menu->description = (string) $request->input('description');
         $menu->content = (string) $request->input('content');
         $menu->active = (string) $request->input('active');
         $menu->save();
 
-        Session::flash('success', 'Cập nhật thành công danh mục');
+        $request->session()->flash('success', 'Cập nhật thành công danh mục');
         return true ;
     }
 
