@@ -27,10 +27,10 @@ class ProductRequest extends FormRequest
         ];
     }
 
-    public function message(){
+    public function messages(){
         return [
-            'name.require' => "Vui lòng nhập tên sản phẩm ",
-            'thumb.require' => "Ảnh đại diện không được để trống"
+            'name.required' => "Vui lòng nhập tên sản phẩm ",
+            'thumb.required' => "Ảnh đại diện không được để trống"
         ];   
     }
 }

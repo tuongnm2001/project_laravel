@@ -11,10 +11,10 @@
       <!-- Sidebar user (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
-          <img src="/template/admin/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+          <img src="/template/admin/dist/img/avatar5.png" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">Alexander Pierce</a>
+          <a href="#" class="d-block">Alexander Arnold</a>
         </div>
       </div>
 
@@ -35,9 +35,11 @@
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
+
+          <!-- Danh mục -->
           <li class="nav-item">
             <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-tachometer-alt"></i>
+              <i class="fab fa-dochub"></i>  &nbsp;
               <p>
                 Danh mục
                 <i class="right fas fa-angle-left"></i>
@@ -54,6 +56,56 @@
                 <a href="/admin/menus/list" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Danh sách danh mục</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+
+          <!-- Sản phẩm -->
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="fab fa-stripe-s"></i></i> &nbsp;
+              <p>
+               Sản phẩm
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="/admin/products/add" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Thêm sản phẩm</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/admin/products/list" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Danh sách sản phẩm</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+
+          <!-- Slider -->
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="far fa-images"></i> &nbsp;
+              <p>
+               Slider
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="/admin/sliders/add" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Thêm Slider</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/admin/sliders/list" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Danh sách Slider</p>
                 </a>
               </li>
             </ul>

@@ -14,6 +14,7 @@ class Product extends Model
         'content',
         'menu_id',
         'price',
+        'price_save',
         'active',
         'thumb'
     ];
