@@ -2,7 +2,10 @@
 
 namespace App\Helpers;
 
+use Illuminate\Support\Str;
+
 class Helper{
+
     public static function menu($menus, $parent_id=0 , $char =''){
         $html='';
         foreach ($menus as $key => $menu) {
@@ -38,4 +41,36 @@ class Helper{
         return $active === 0 ? '<span class="btn btn-danger btn-xs">NO</span>' : 
         '<span  class="btn btn-success btn-xs">YES</span>';
     }
+
+    public static function menus($menus , $parent_id = 0){
+        $html = '';
+        foreach ($menus as $key => $item) {
+            if($item->parent_id == $parent_id){
+                $html .= '
+                    <li>
+                        <a href="/danh-muc/' . $item->id . '-'. Str::slug($item->name,'-').'.html">
+                            '. $item->name .'
+                        </a>';
+
+                        if(self::isChild($menus , $item->id)){
+                            $html .= '<ul class="sub-menu">';
+                            $html .= self::menus($menus, $item->id);
+                            $html .= '</ul>';
+                        }
+                    $html .='</li>';
+            }
+        }
+        return $html ;
+    }   
+
+    //Xử lý function cấp 2 
+    public static function isChild($menus , $id){
+        foreach($menus as $item){
+            if($item->parent_id = $id){
+                return true ;
+            }
+        }
+        return false ;
+    }
+
 }

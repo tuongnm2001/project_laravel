@@ -3,8 +3,8 @@
 <head>
 	@include('head')
 </head>
-<body class="animsition">
-	
+<body>
+	{{-- class="animsition" --}}
 	<!-- Header -->
 	@include('header')
 
@@ -947,8 +947,6 @@
 			</div>
 		</div>
 	</section>
-
-
 	@include('footer');
 </body>
 </html>
