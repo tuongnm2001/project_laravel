@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use \App\Http\Controllers\Admin\Users\LoginController;
-use \App\Http\Controllers\Admin\MainController;
+use \App\Http\Controllers\MainController;
 use \App\Http\Controllers\Admin\MenuController;
 use \App\Http\Controllers\Admin\UploadController;
 use \App\Http\Controllers\Admin\ProductController;
@@ -17,18 +17,14 @@ Route::get('/', function () {
 
 Route::get('/admin/users/login',[LoginController::class, 'index'])->name('login');
 Route::post('/admin/users/login/store',[LoginController::class, 'store']);
-// Route::get('/api/menu',[MenuApi::class,'index']);
 
 
 Route::middleware(['auth'])->group(function(){
     
     Route::prefix('admin')->group(function(){
 
-        Route::get('/',[MainController::class,'index'])->name('admin');
-        Route::get('/main',[MainController::class,'index']);
-    
-        Route::get('/api/menu',[MenuApi::class,'index'])->middleware('VerifyMiddleWare');
-
+        // Route::get('/',[MainController::class,'index'])->name('admin');
+        // Route::get('/main',[MainController::class,'index']);
 
         #Menu
         Route::prefix('/menus')->group(function(){
@@ -67,4 +63,4 @@ Route::middleware(['auth'])->group(function(){
     
 });
 
-
+Route::get('/main', [MainController::class , 'index']);

@@ -39,8 +39,8 @@ class SliderService{
     public function delete($request){
         $slider = Slider::where('id', $request->input('id'))->first();
         if($slider){
-            $path = str_replace('storage', 'public', $slider->thumb);
-            Storage::delete($path);
+            // $path = str_replace('storage', 'public', $slider->thumb);
+            // Storage::delete($path);
             $slider->delete();
             return true ;
         }
