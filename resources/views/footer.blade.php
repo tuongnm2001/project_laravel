@@ -179,7 +179,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 										</div>
 									</div>
 
-									<div class="item-slick3" data-thumb="images/product-detail-02.jpg">
+									<div class="item-slick3" data-thumb="template/images/product-detail-02.jpg">
 										<div class="wrap-pic-w pos-relative">
 											<img src="template/images/product-detail-02.jpg" alt="IMG-PRODUCT">
 
@@ -189,7 +189,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 										</div>
 									</div>
 
-									<div class="item-slick3" data-thumb="images/product-detail-03.jpg">
+									<div class="item-slick3" data-thumb="template/images/product-detail-03.jpg">
 										<div class="wrap-pic-w pos-relative">
 											<img src="template/images/product-detail-03.jpg" alt="IMG-PRODUCT">
 

@@ -44,7 +44,7 @@ class MenuService{
     }
 
     public function getAll(){
-        return Menu::orderbyDesc('id')->paginate(20);
+        return Menu::orderbyDesc('updated_at')->paginate(20);
     }
 
     public function destroy($request){

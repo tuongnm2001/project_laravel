@@ -22,6 +22,6 @@ Route::post('login',[ProductController::class, 'login']);
 //     return $request->user();
 // });
 
-Route::middleware('auth:sanctum')->group(function () {
-    Route::Get('/products', [ProductController::class,'index']);
-});
+// Route::middleware('auth:sanctum')->group(function () {
+//     Route::Get('/products', [ProductController::class,'index']);
+// });

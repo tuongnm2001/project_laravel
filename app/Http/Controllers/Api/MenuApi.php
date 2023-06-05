@@ -1,27 +1,27 @@
 <?php
 
-namespace App\Http\Middleware;
-use Closure;
-use Illuminate\Http\Request;
-use Auth ;
+// namespace App\Http\Middleware;
+// use Closure;
+// use Illuminate\Http\Request;
+// use Auth ;
 
 
-namespace App\Http\Controllers\Api;
+// namespace App\Http\Controllers\Api;
 
-use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
-use App\Models\Menu;
+// use App\Http\Controllers\Controller;
+// use Illuminate\Http\Request;
+// use App\Models\Menu;
 
-class MenuApi extends Controller{
+// class MenuApi extends Controller{
 
-    public function index(){
+//     public function index(){
         
-        $menu = Menu::all();
-        if($menu){
-            return response([
-                'data'=>$menu,
-                'err_Message'=> "Ok"
-            ]);
-        }
-    }
-}
+//         $menu = Menu::all();
+//         if($menu){
+//             return response([
+//                 'data'=>$menu,
+//                 'err_Message'=> "Ok"
+//             ]);
+//         }
+//     }
+// }

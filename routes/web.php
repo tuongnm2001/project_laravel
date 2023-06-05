@@ -1,19 +1,18 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use \App\Http\Controllers\Admin\Users\LoginController;
+use \App\Http\Controllers\Api\MenuApi;
 use \App\Http\Controllers\MainController;
-use \App\Http\Controllers\Admin\MenuController;
+use App\Http\Controllers\Admin\MenuController;
+use \App\Http\Controllers\Admin\SliderController;
 use \App\Http\Controllers\Admin\UploadController;
 use \App\Http\Controllers\Admin\ProductController;
-use \App\Http\Controllers\Admin\SliderController;
-use \App\Http\Controllers\Api\MenuApi;
+use App\Http\Controllers\Admin\MainAdminController;
+use \App\Http\Controllers\Admin\Users\LoginController;
 
 Route::get('/', function () {
     return view('welcome');
 });
-
-
 
 Route::get('/admin/users/login',[LoginController::class, 'index'])->name('login');
 Route::post('/admin/users/login/store',[LoginController::class, 'store']);
@@ -23,7 +22,7 @@ Route::middleware(['auth'])->group(function(){
     
     Route::prefix('admin')->group(function(){
 
-        // Route::get('/',[MainController::class,'index'])->name('admin');
+        Route::get('/',[MainAdminController::class,'index'])->name('admin');
         // Route::get('/main',[MainController::class,'index']);
 
         #Menu
