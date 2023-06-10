@@ -45,7 +45,7 @@ class ProductAdminService{
     //Product::with('menu') => with('menu') với model Product
     public function get(){
         return Product::with('menu')
-            ->orderByDesc('updated_at')->paginate(15);
+            ->orderByDesc('updated_at')->paginate(5);
     }
 
     public function update($request,$product){

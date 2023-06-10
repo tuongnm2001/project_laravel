@@ -75,4 +75,11 @@ class Helper{
         return false ;
     }
 
+    public static function price($price = 0 , $priceSave=0){
+
+        if($priceSave !== 0 ) return $priceSave ;
+        if($price !==0 ) return $price ;
+        return '<a href="/lien-he.html">Liên Hệ</a>';
+    }
+
 }
